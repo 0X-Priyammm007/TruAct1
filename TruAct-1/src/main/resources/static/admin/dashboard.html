@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - TruAct</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Admin Dashboard</h1>
+        <nav>
+            <ul>
+                <li><a href="/admin/configure">Configuration Settings</a></li>
+                <li><a href="/admin/reports">Detection Reports</a></li>
+                <li><a href="/admin/algorithms">Algorithm Management</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="configuration">
+            <h2>Configuration Settings</h2>
+            <form action="/admin/configure" method="POST">
+                <label for="threshold">Detection Threshold:</label>
+                <input type="number" id="threshold" name="threshold" required>
+                <label for="algorithm">Algorithm:</label>
+                <select id="algorithm" name="algorithm">
+                    <option value="algorithm1">Algorithm 1</option>
+                    <option value="algorithm2">Algorithm 2</option>
+                </select>
+                <button type="submit">Update Configuration</button>
+            </form>
+        </section>
+
+        <section id="reports">
+            <h2>Detection Reports</h2>
+            <div id="report-list">
+                <!-- Reports will be dynamically loaded here -->
+            </div>
+        </section>
+
+        <section id="algorithm-management">
+            <h2>Algorithm Management</h2>
+            <form action="/admin/algorithms/update" method="POST">
+                <label for="algorithm-name">Algorithm Name:</label>
+                <input type="text" id="algorithm-name" name="algorithm-name" required>
+                <button type="submit">Update Algorithm</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 TruAct. All rights reserved.</p>
+    </footer>
+</body>
+</html>
